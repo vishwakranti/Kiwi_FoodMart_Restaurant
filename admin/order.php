@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <base href="http://localhost:8080/kiwi_foodmart/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kiwi foodmart</title>
-    <link rel="stylesheet" href="./css_kiwi_foodmart/admin.css">
+    <link rel="stylesheet" href="admin/css_kiwi_foodmart/admin.css">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
             <div class="container">
                 <div class="Logo">
                     <a href="#" title="Logo">
-                        <img src="../images/category/Logo.png" alt="Restaurant Logo" class="img-responsive">
+                        <img src="./images/category/Logo.png" alt="Restaurant Logo" class="img-responsive">
                     </a>
                 </div>
         </section>
@@ -39,7 +40,7 @@
                         <legend>Selected Dish</legend>
 
                         <div class="Dish-menu-img">
-                            <img src="../images/ChickenBiryani.jpg" alt="Chicken Biryani" class="img-responsive img-curve">
+                            <img src="./images/ChickenBiryani.jpg" alt="Chicken Biryani" class="img-responsive img-curve">
                         </div>
 
                         <div class="Dish-menu-desc">
@@ -75,25 +76,29 @@
 
             </div>
         </section>
-        <!-- Dish SEARCH Section Ends Here -->
+        <!-- Dish Search Section Ends Here -->
 
-        <!-- social Section Starts Here -->
+        <!-- Social Section Starts Here -->
         <section class="social">
             <div class="container text-center">
-                <ul>
-                    <li>
-                        <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
-                    </li>
-                </ul>
+                <div class="row">
+                    <div class="social-media">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="./images/logo-Facebook-icon.png" alt="Icon Facebook" class="img-responsive img-curve" width="50px" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./images/logo-Twitter.png" alt="Icon Twitter" class="img-responsive img-curve" width="100px" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./images/logo-Whatsapp-icon.png" alt="Icon WhatsApp" class="img-responsive img-curve" width="50px" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- social Section Ends Here -->
+        <!-- Social Section Ends Here -->
 
         <!-- footer Section Starts Here -->
         <?php include('partials/footer.php') ?>

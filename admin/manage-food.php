@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <base href="http://localhost:8080/kiwi_foodmart/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kiwi foodmart</title>
-    <link rel="stylesheet" href="./css_kiwi_foodmart/admin.css">
+    <link rel="stylesheet" href="admin/css_kiwi_foodmart/admin.css">
 </head>
 
 <body>
@@ -38,6 +39,11 @@
             echo $_SESSION['unauthorize'];
             unset($_SESSION['unauthorize']);
         }
+        if (isset($_SESSION['update'])) {
+            echo $_SESSION['update'];
+            unset($_SESSION['update']);
+        }
+
         ?>
         <table class="tbl-full">
             <tr>
@@ -63,7 +69,7 @@
 
             if ($count > 0) {
                 //We have food in database
-                //Get the food froom database and display
+                //Get the food from database and display
 
                 while ($row = mysqli_fetch_assoc($res)) {
 
@@ -90,7 +96,7 @@
                             } else {
                                 // We have image, display image
                             ?>
-                                <img src="<?php echo SiteURL; ?>images/dish/<?php echo $image_name; ?>" width="100px" />
+                                <img src="<?php echo SiteURL; ?>images/food/<?php echo $image_name; ?>" width="100px" />
                             <?php
                             }
                             ?>
@@ -100,8 +106,8 @@
                         <td><?php echo $active; ?></td>
 
                         <td>
-                            <a href="<?php echo SiteURL; ?>admin/update-dish.php?id=<?php echo $id; ?>" class="btn-secondary">Update Dish</a>
-                            <a href="<?php echo SiteURL; ?>admin/delete-dish.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Dish</a>
+                            <a href="<?php echo SiteURL; ?>admin/update-food.php?id=<?php echo $id; ?>" class="btn-secondary">Update Food</a>
+                            <a href="<?php echo SiteURL; ?>admin/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Food</a>
                         </td>
 
                     </tr>
