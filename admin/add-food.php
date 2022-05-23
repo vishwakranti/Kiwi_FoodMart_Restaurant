@@ -163,7 +163,7 @@
 
                     //Destination path for the image o be uploaded
 
-                    $dst = "../images/dish/" . $image_name;
+                    $dst = "../images/food/" . $image_name;
 
                     //Finally uplaod the dish image
                     $upload = move_uploaded_file($src, $dst);

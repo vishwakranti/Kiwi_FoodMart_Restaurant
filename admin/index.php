@@ -70,7 +70,7 @@
 
                 <?php
                 //Sql Query 
-                $sql3 = "SELECT * FROM order";
+                $sql3 = "SELECT * FROM `order`";
                 //Execute Query
                 $res3 = mysqli_query($conn, $sql3);
                 //Count Rows
@@ -87,7 +87,7 @@
                 <?php
                 //Creat SQL Query to Get Total Revenue Generated
                 //Aggregate Function in SQL
-                $sql4 = "SELECT SUM(total) AS Total FROM order WHERE status='Delivered'";
+                $sql4 = "SELECT SUM(total) AS Total FROM `order` WHERE status='ordered' group by total";
 
                 //Execute the Query
                 $res4 = mysqli_query($conn, $sql4);

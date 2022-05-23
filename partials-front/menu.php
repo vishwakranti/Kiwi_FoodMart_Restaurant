@@ -30,7 +30,7 @@ include MY_SITE_DIR . '\..\admin\config\constants.php';
 
     </div>
 </section>
-<!-- fOOD sEARCH Section Ends Here -->
+<!-- Food Search Section Ends Here -->
 
 <body>
     <!-- Navbar Section Starts Here -->
@@ -51,10 +51,13 @@ include MY_SITE_DIR . '\..\admin\config\constants.php';
                         <a href="<?php echo SiteURL; ?>categories.php">categories</a>
                     </li>
                     <li>
-                        <a href="<?php echo SiteURL; ?>foods.php> ">Foods</a>
+                        <a href="<?php echo SiteURL; ?>foods.php">Foods</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="<?php echo SiteURL; ?>contact.php">Contact</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo SiteURL; ?>cart.php">Cart</a>
                     </li>
                 </ul>
             </div>
