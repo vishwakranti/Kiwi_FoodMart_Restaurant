@@ -16,23 +16,28 @@ include MY_SITE_DIR . '\..\admin\config\constants.php';
 
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="./admin/css_kiwi_foodmart/admin.css">
+
+    <!--Bootstrap css-->
+    <!-- CSS only -->
+    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
 </head>
 
-
-<!-- fOOD sEARCH Section Starts Here -->
-<section class="food-search text-center">
-    <div class="container">
-
-        <form action="food-search.html" method="POST">
-            <input type="search" name="search" placeholder="Search for Food.." required>
-            <input type="submit" name="submit" value="Search" class="btn btn-primary">
-        </form>
-
-    </div>
-</section>
-<!-- Food Search Section Ends Here -->
-
 <body>
+<!-- fOOD sEARCH Section Starts Here -->
+<div class="container">
+    <form class="row justify-content-center">
+        <div class="col-auto col-md-6 col-lg-6 pe-0">
+            <label for="inputSearch" class="visually-hidden">Search</label>
+            <input type="text" class="form-control" id="inputSearch" placeholder="Search for food...">
+        </div>
+        <div class="col-auto ps-1">
+            <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </div>
+    </form>
+</div>
+
+
+<!-- Food Search Section Ends Here -->
     <!-- Navbar Section Starts Here -->
     <section class="navbar">
         <div class="container">
