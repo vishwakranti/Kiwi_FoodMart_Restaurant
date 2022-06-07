@@ -20,6 +20,12 @@ include MY_SITE_DIR . '\..\admin\config\constants.php';
 	<!--Bootstrap css-->
 	<!-- CSS only -->
 	<link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+
+    <!--MD bootstrap css-->
+    <!--<link rel="stylesheet" href="MDB5-STANDARD-UI-KIT-Free-4.1.0/css/mdb.min.css">-->
+	
+	<!--front css-->
+	<link rel="stylesheet" href="css/front.css">
 </head>
 
 <body>
@@ -39,7 +45,7 @@ include MY_SITE_DIR . '\..\admin\config\constants.php';
 
 	<!-- Food Search Section Ends Here -->
 	<!-- Navbar Section Starts Here -->
-
+    <!--reference: https://www.codeply.com/p/P0KN7DNsEq how to place navbar in the center-->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
             <a class="navbar-brand" href="<?php echo SiteURL; ?>" alt="kiwi food mart logo"> 

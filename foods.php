@@ -16,7 +16,7 @@
 
 
 <!-- fOOD MEnu Section Starts Here -->
-<section class="food-menu">
+<section class="">
     <div class="container">
         <h2 class="text-center">Food Menu</h2>
 
@@ -41,35 +41,32 @@
                 $price = $row['price'];
                 $image_name = $row['name_image'];
         ?>
-
-                <div class="food-menu-box">
-                    <div class="food-menu-img">
-                        <?php
-                        //CHeck whether image available or not
-                        if ($image_name == "") {
-                            //Image not Available
-                            echo "<div class='error'>Image not Available.</div>";
-                        } else {
-                            //Image Available
-                        ?>
-                            <img src="<?php echo SiteURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                        <?php
-                        }
-                        ?>
-
-                    </div>
-
-                    <div class="food-menu-desc">
-                        <h4><?php echo $title; ?></h4>
-                        <p class="food-price">$<?php echo $price; ?></p>
-                        <p class="food-detail">
-                            <?php echo $description; ?>
-                        </p>
-                        <br>
-
-                        <a href="<?php echo SiteURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">add to cart</a>
+                 <div class="card mb-3">
+                    <div class="row g-0 m-5">
+                        <div class="col-md-4 col-sm-4 col-lg-4">
+                            <?php
+                            //Check whether image available or not
+                            if ($image_name == "") {
+                                //Image not Available
+                                echo "<div class='error'>Image not Available.</div>";
+                            } else {
+                                //Image Available
+                            ?>
+                                <img src="<?php echo SiteURL; ?>images/food/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-fluid rounded-start card-img-left">
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-lg-8 p-4">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $title; ?></h5>
+                            <p class="card-text"><?php echo $description; ?></p>
+                            <p class="card-text"><small class="text-muted"><?php echo "$".$price; ?></small></p>
+                            <p class="card-text"><a href="<?php echo " order.php?food_id=" . $id ?>" class="btn-btn-primary">Add to cart</a></p>
+                        </div>
                     </div>
                 </div>
+            </div>
 
         <?php
             }

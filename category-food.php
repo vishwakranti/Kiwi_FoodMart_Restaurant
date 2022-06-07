@@ -9,7 +9,7 @@ if (isset($_GET['category_id'])) {
     //Category id is set and get the id
     $category_id = $_GET['category_id'];
     // Get the CAtegory Title Based on Category ID
-    $sql = "SELECT title FROM tbl_category WHERE id=$category_id";
+    $sql = "SELECT title FROM category WHERE id=$category_id";
 
     //Execute the Query
     $res = mysqli_query($conn, $sql);
@@ -44,7 +44,7 @@ if (isset($_GET['category_id'])) {
         <?php
 
         //Create SQL Query to Get foods based on Selected CAtegory
-        $sql2 = "SELECT * FROM tbl_food WHERE category_id=$category_id";
+        $sql2 = "SELECT * FROM food WHERE category_id=$category_id";
 
         //Execute the Query
         $res2 = mysqli_query($conn, $sql2);
@@ -110,8 +110,6 @@ if (isset($_GET['category_id'])) {
 
 </section>
 <!-- fOOD Menu Section Ends Here -->
-
-<?php include('partials-front/footer.php'); ?>
 <!-- Categories Section Ends Here -->
 
 

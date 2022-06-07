@@ -2,13 +2,13 @@
 
 <body>
 
-    <!-- Categories Section Starts Here -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="text-center">Food Menu</h2>
+	<!-- Categories Section Starts Here -->
+	<section class="categories">
+		<div class="container">
+			<h2 class="text-center">Food Categories</h2>
+			<div class="row">
 
-
-            <?php
+				<?php
             // Query to get all categories from database
             $sql = "SELECT * FROM category WHERE active='Yes' And featured='Yes' LIMIT 4";
 
@@ -31,8 +31,9 @@
                     $featured = $row['featured'];
                     $active = $row['active'];
             ?>
-                    <a href="category-foods.php">
-                        <div class="box-3 float-container">
+				<div class="card col-md-6 p-2" style="">
+					<a href="<?php echo "category-food.php?category_id=".$id?>">
+                        
                             <?php
                             //check whether image is available or not
                             if ($image_name == "") {
@@ -41,38 +42,41 @@
                             } else {
                                 //Image available
                             ?>
-                                <img src="<?php echo SiteURL; ?>images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive img-curve">
+                                <img src="<?php echo SiteURL; ?>images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="card-img-top col-md-5">
                             <?php
                             }
 
                             ?>
-                            <h3 class="float-text text-white"><?php echo $title; ?></h3>
+                            <div class="card-body">
+                            <p class="card-text"><?php echo $title; ?></p>
                         </div>
+                        
                     </a>
-
-                <?php
+				</div>
+				<?php
                 }
             } else {
                 //We do not have data
                 //We will display the message inside the table
                 ?>
-                <div class="error">No Category Added.</div>
-            <?php
+				<div class="error">No Category Added.</div>
+				<?php
             }
 
             ?>
-            <div class="clearfix"></div>
-        </div>
-    </section>
-    <!-- Categories Section Ends Here -->
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</section>
+	<!-- Categories Section Ends Here -->
 
 
-    <!-- Food Menu Section Starts Here -->
-    <section class="food-menu">
-        <div class="container">
-            <h2 class="text-center">Food Menu</h2>
+	<!-- Food Menu Section Starts Here -->
+	<section class="">
+		<div class="container">
+			<h2 class="text-center">Food Menu</h2>
 
-            <?php
+			<?php
             // Query to get all categories from database
             $sql = "SELECT * FROM food";
 
@@ -96,39 +100,37 @@
                     $price = $row['price'];
             ?>
 
-                    <div class="food-menu-box">
-                        <div class="food-menu-img">
-                            <img src="<?php echo SiteURL; ?>images/food/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-details">
-                            <h4><?php echo $title; ?></h4>
-                            <p class="food-price">$<?php echo $price; ?></p>
-                            <p class="food-description">
-                                <?php echo $description; ?>
-                            </p>
-                            <br>
-
-                            <a href="<?php echo "order.php?food_id=" . $id ?>" class="btn-btn-primary">Order Now</a>
-                        </div>
+            <div class="card mb-3">
+                <div class="row g-0 m-5">
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <img src="<?php echo SiteURL; ?>images/food/<?php echo $image_name; ?>"
+                                    alt="<?php echo $title; ?>" class="img-fluid rounded-start card-img-left">
                     </div>
+                    <div class="col-md-8 col-sm-8 col-lg-8 p-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $title; ?></h5>
+                        <p class="card-text"><?php echo $description; ?></p>
+                        <p class="card-text"><small class="text-muted"><?php echo "$".$price; ?></small></p>
+                        <p class="card-text"><a href="<?php echo " order.php?food_id=" . $id ?>" class="btn-btn-primary">Add to cart</a></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
 
-                <?php
+			<?php
                 }
             } else {
                 //We do not have data
                 //We will display the message inside the table
                 ?>
-                <div class="error">No Category Added.</div>
-            <?php
+			<div class="error">No food dish Added.</div>
+			<?php
             }
 
             ?>
 
-        </div>
-    </section>
-    <!-- Food Menu Section Ends Here -->
-</body>
+		</div>
+	</section>
+	<!-- Food Menu Section Ends Here -->
 
-</html>
-
-<?php include('partials-front/footer.php'); ?>
+	<?php include('partials-front/footer.php'); 

@@ -2,9 +2,9 @@
 
 
 <!-- Categories Section Starts Here -->
-<section class="categories">
-    <div class="container">
-        <h2 class="text-center">Explore Foods</h2>
+<section class="">
+    <div class="container  ">
+        <h2 class="text-center">Explore Categories</h2>
         <?php
         // Query to get all categories from database
         $sql = "SELECT * FROM category";
@@ -28,13 +28,29 @@
                 $featured = $row['featured'];
                 $active = $row['active'];
         ?>
-                <a href="<?php echo SiteURL . "category.php?id=" . $id; ?>">
-                    <div class="box-3 float-container">
-                        <img src="<?php echo SiteURL; ?>images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive img-curve">
 
-                        <h3 class="float-text text-white"><?php echo $title; ?></h3>
-                    </div>
-                </a>
+                <div class="card col-md-6 p-2 mx-auto" style="">
+					<a href="<?php echo SiteURL . "category.php?id=" . $id; ?>">
+                        
+                            <?php
+                            //check whether image is available or not
+                            if ($image_name == "") {
+                                //Display Message
+                                echo "<div class='error'>Image not available</div>";
+                            } else {
+                                //Image available
+                            ?>
+                                <img src="<?php echo SiteURL; ?>images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="card-img-top col-md-5">
+                            <?php
+                            }
+
+                            ?>
+                            <div class="card-body text-center">
+                                <p class="card-text"><?php echo $title; ?></p>
+                            </div>
+                        
+                    </a>
+				</div>
 
             <?php
             }

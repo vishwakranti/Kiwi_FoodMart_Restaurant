@@ -1,0 +1,13 @@
+
+/*index.php*/
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.card-img-left{
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
