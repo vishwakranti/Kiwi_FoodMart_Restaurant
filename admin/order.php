@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <base href="http://localhost:8080/kiwi_foodmart/">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kiwi foodmart</title>
-    <link rel="stylesheet" href="admin/css_kiwi_foodmart/admin.css">
-</head>
-
-<body>
     <?php include('partials/menu.php') ?>
     <div class="main-content">
         <div class="wrapper"></div>
@@ -78,30 +65,5 @@
         </section>
         <!-- Dish Search Section Ends Here -->
 
-        <!-- Social Section Starts Here -->
-        <section class="social">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="social-media">
-                        <ul>
-                            <li>
-                                <a href="#"><img src="./images/logo-Facebook-icon.png" alt="Icon Facebook" class="img-responsive img-curve" width="50px" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="./images/logo-Twitter.png" alt="Icon Twitter" class="img-responsive img-curve" width="100px" /></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="./images/logo-Whatsapp-icon.png" alt="Icon WhatsApp" class="img-responsive img-curve" width="50px" /></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Social Section Ends Here -->
-
         <!-- footer Section Starts Here -->
         <?php include('partials/footer.php') ?>
-</body>
-
-</html>

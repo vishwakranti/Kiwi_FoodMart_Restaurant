@@ -1,6 +1,8 @@
 <?php
 //Include constants.php file here 
-include('./config/constants.php');
+//include('./config/constants.php');
+require_once '../constants.php';
+
 //1. Get the ID of Admin to be deleted
 $id = $_GET['id'];
 //2. Create SQL Query to Delete Admin

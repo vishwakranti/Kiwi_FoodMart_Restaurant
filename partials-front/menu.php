@@ -1,8 +1,10 @@
 <?php
 define("MY_SITE_DIR", __DIR__);
 
-include MY_SITE_DIR . '\..\admin\config\constants.php';
+//include MY_SITE_DIR . '\..\admin\config\constants.php';
 //include MY_SITE_DIR . '\login-check.php';
+require_once 'constants.php';
+require_once 'utilities/helperFunctions.php';
 
 ?>
 <!DOCTYPE html>
@@ -71,6 +73,21 @@ include MY_SITE_DIR . '\..\admin\config\constants.php';
 					<li class="nav-item">
 						<a class="nav-link" href="<?php echo SiteURL; ?>cart.php">Cart</a>
 					</li>
+					<?php
+						if(!isLoggedIn()){
+					 ?>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo SiteURL; ?>login.php">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo SiteURL; ?>register.php">Register</a>
+					</li>
+						<?php } else { ?>
+
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo SiteURL; ?>logout.php">Logout</a>
+					</li>
+					<?php } ?>
                 </ul>
             </div>
         </div>

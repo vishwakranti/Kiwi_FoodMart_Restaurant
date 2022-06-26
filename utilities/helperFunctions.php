@@ -10,7 +10,7 @@ function isLoggedIn()
 
 function isAdmin()
 {
-    if (isLoggedIn() && isset($_SESSION['is_admin']) && $_SESSION['is_admin'])
+    if (isLoggedIn() && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'])
         return $_SESSION['is_admin'];
 
     return false;
@@ -67,5 +67,6 @@ function setupUserSession(string $id, string $userEmail, $isAdmin = false)
     $_SESSION["logged_in"] = true;
     $_SESSION["user_id"] = $id;
     $_SESSION["user_email"] = $userEmail;
-    $_SESSION["is_admin"] = $isAdmin;
+    if($isAdmin)
+     $_SESSION["isAdmin"] = $isAdmin;
 }

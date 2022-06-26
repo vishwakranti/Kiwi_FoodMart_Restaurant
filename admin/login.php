@@ -1,4 +1,6 @@
-<?php include('./config/constants.php');
+<?php 
+require_once '../constants.php';
+require_once '../utilities/helperFunctions.php';
 ?>
 
 <!DOCTYPE html>
@@ -66,6 +68,8 @@ if (isset($_POST['submit'])) {
     if ($count == 1) {
         //User available and login success
         $_SESSION['login'] = "<div class=\"Success\">Login Successfully.</div>";
+        setupUserSession("1", $username, true);
+
         //Redirect to Home page/Dashboard
         header('location:' . SiteURL . 'admin/');
     } else {

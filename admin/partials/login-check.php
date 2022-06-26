@@ -1,7 +1,7 @@
 <?php
 //Authorization - Access Control
 //Check wheather the user is logged in or not
-if (!isset($_SESSION['user'])) //If user session is not set
+if (!isset($_SESSION['isAdmin'])) //If user session is not set
 
 {
     //User is not logged in

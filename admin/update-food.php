@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <base href="http://localhost:8080/kiwi_foodmart/">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kiwi foodmart</title>
-    <link rel="stylesheet" href="admin/css_kiwi_foodmart/admin.css">
-</head>
-
-<body>
     <?php include('partials/menu.php') ?>
 
     <?php
@@ -262,6 +249,3 @@
         ?>
     </div>
     <?php include('partials/footer.php') ?>
-</body>
-
-</html>

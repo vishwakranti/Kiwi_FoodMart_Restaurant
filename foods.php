@@ -1,8 +1,8 @@
 <?php include('partials-front/menu.php'); ?>
 
 <!-- fOOD sEARCH Section Starts Here -->
-<section class="food-search text-center">
-    <div class="container">
+<section class="text-center">
+    <div class="container p-5">
 
         <form action="<?php echo SiteURL; ?>food-search.php" method="POST">
             <input type="search" name="search" placeholder="Search for Food.." required>
