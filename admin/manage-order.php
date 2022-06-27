@@ -1,11 +1,11 @@
     <?php include('partials/menu.php') ?>
-    <div class="main-content">
-        <div class="wrapper"></div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
         <h1>Manage Order</h1>
         <br>
         <br>
 
-        <table class="tbl-full">
+        <table class="table">
             <tr>
                 <th>Serial Number</th>
                 <th>Full Name</th>
@@ -47,5 +47,6 @@
             </tr>
         </table>
 
+    </div>
     </div>
     <?php include('partials/footer.php') ?>

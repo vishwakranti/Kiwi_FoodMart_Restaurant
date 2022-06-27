@@ -30,14 +30,14 @@
     }
     ?>
 
-    <div class="main-content">
-        <div class="wrapper"></div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
         <h1>Update Dish</h1>
         <br>
         <br>
         <form action="update-food.php" method="POST" enctype="multipart/form-data">
 
-            <table class="tbl-30">
+            <table class="table">
                 <tr>
                     <td>Title:</td>
                     <td>
@@ -247,5 +247,6 @@
         }
 
         ?>
+        </div>
     </div>
     <?php include('partials/footer.php') ?>

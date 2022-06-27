@@ -21,10 +21,11 @@ if (isset($_GET['food_id'])) {
         $title = $row['title'];
         $price = $row['price'];
         $image_name = $row['name_image'];
+        $sessionId = session_id();
     } else {
         //Food not Availabe
         //Redirect to Home Page
-        header('location:' . SiteURL);
+        header('location: cart.php');
     }
 } else {
     //Redirect to homepage

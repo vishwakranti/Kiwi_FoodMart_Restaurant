@@ -1,6 +1,6 @@
     <?php include('partials/menu.php') ?>
-    <div class="main-content">
-        <div class="wrapper"></div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
         <h1>Manage Food</h1>
         <br>
         <br>
@@ -32,7 +32,8 @@
         }
 
         ?>
-        <table class="tbl-full">
+        <table class="table table-striped">
+        <thead>
             <tr>
                 <th>S.N.</th>
                 <th>Title</th>
@@ -42,6 +43,8 @@
                 <th>Active</th>
                 <th>Actions</th>
             </tr>
+            </thead>
+            <tbody>
             <?php
             //Create a SQL Query to get all the food
             $sql = "SELECT * FROM food";
@@ -106,7 +109,9 @@
             }
 
             ?>
+            </tbody>
         </table>
 
+    </div>
     </div>
     <?php include('partials/footer.php') ?>

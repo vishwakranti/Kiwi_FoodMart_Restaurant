@@ -147,7 +147,7 @@
 
             ?>
             <form action="update-category.php" method="POST" enctype="multipart/form-data">
-                <table class="tbl-30">
+                <table class="table">
                     <tr>
                         <td>Title:</td>
                         <td>

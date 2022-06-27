@@ -19,7 +19,7 @@
             <br><br>
             <!--Add category form starts here-->
             <form action="" method="POST" enctype="multipart/form-data">
-                <table class="tbl-30">
+                <table class="table">
                     <tr>
                         <td>Title: </td>
                         <td>

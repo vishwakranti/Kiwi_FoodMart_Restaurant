@@ -1,7 +1,7 @@
     <?php include('partials/menu.php'); ?>
     <!--Main content starts here-->
-    <div class="main content">
-        <div class="wrapper">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
             <h1>Manage Admin</h1>
             <br>
             <br>
@@ -44,13 +44,16 @@
             <a href="add-admin.php" class="btn-primary">Add Admin</a>
             <br>
             <br>
-            <table class="tbl-full">
+            <table class="table table-striped">
+            <thead>
                 <tr>
                     <th>Serial Number</th>
                     <th>Full Name</th>
                     <th>Username</th>
                     <th>Actions</th>
                 </tr>
+                </thead>
+                <tbody>
                 <?php
                 //Query to Get all Admin
                 $sql = 'SELECT * FROM admin';
@@ -95,15 +98,13 @@
                 }
 
                 ?>
-
+                </tbody>
             </table>
 
             <div class="clearfix"></div>
 
         </div>
     </div>
+    </div>
     <!--Main content ends here-->
     <?php include('partials/footer.php'); ?>
-</body>
-
-</html>
