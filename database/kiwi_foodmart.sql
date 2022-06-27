@@ -3,19 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2022 at 12:28 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: Jun 27, 2022 at 08:07 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `kiwi_foodmart`
@@ -126,6 +120,42 @@ INSERT INTO `order` (`id`, `food`, `price`, `quantity`, `total`, `order_date`, `
 (2, 'Drink', '4.0000', 1, '4.0000', '0000-00-00 00:00:00', '2022-05-14', 'Vishwakranti su', 121212, 'vishwakrantisuryawan', '4 Nottingham Ave, Halswell\r\nSuite'),
 (3, 'Chicken Biryani', '27.0000', 3, '81.0000', '2022-05-14 02:35:48', 'Ordered', 'Vishwakranti su', 78569870, 'vishwakrantisuryawan', '4 Nottingham Ave, Halswell\r\nSuite');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_cart`
+--
+
+CREATE TABLE `order_cart` (
+  `ct_id` int(10) UNSIGNED NOT NULL,
+  `pd_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `ct_qty` mediumint(8) UNSIGNED NOT NULL DEFAULT 1,
+  `ct_session_id` char(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `ct_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(12) NOT NULL,
+  `enabled` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `role`, `enabled`) VALUES
+(1, 'mslgvkrjt@yahoo.com', '$2y$10$KHhCh7klnxGOYO/iTQlhaOwwxfHJYbRZMx2p1oITDmFasEJVHZemW', '', 1),
+(2, 'ajit.musalgavkar@gmail.com', '$2y$10$wrrzSzKT.MHJH3gZfGwTFe/vo4Hm4q.yjekKf8i3/BIT6cD4lX5kK', '', 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -155,6 +185,20 @@ ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `order_cart`
+--
+ALTER TABLE `order_cart`
+  ADD PRIMARY KEY (`ct_id`),
+  ADD KEY `pd_id` (`pd_id`),
+  ADD KEY `ct_session_id` (`ct_session_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -181,8 +225,16 @@ ALTER TABLE `food`
 --
 ALTER TABLE `order`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- AUTO_INCREMENT for table `order_cart`
+--
+ALTER TABLE `order_cart`
+  MODIFY `ct_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
