@@ -1,8 +1,4 @@
 <?php include('partials-front/menu.php'); ?>
-<!doctype html>
-<html lang="en">
-
-<body>
     <header class="mt-0">
     </header>
     <main>

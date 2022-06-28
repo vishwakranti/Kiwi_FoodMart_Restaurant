@@ -29,72 +29,72 @@ if (isset($_GET['food_id'])) {
     }
 } else {
     //Redirect to homepage
-    header('location:' . SiteURL);
+    header('location: index.php');
 }
 ?>
 
 <!-- Food Search Section Starts Here -->
-<section class="food-search">
-    <div class="container">
+<section class="">
+	<div class="container">
+		<h2 class="text-center text-white">Fill this form to confirm your order.</h2>
+		<form action="" method="POST" class="order">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="row">item</th>
+						<th scope="col">price</th>
+						<th scope="col">quantity</th>
+						<th scope="col">total</th>
+						<th scope="row"></th>
+					</tr>
+				</thead>
+				<tbody class="align-middle">
+					<tr>
+						<td>
+							<?php if ($image_name <> "") { ?>
+							<img src="<?php echo SiteURL; ?>images/food/<?php echo $image_name; ?>"
+							 alt="Chicken Biryani" class="img-responsive img-curve" style="width:45%;">
+							<?php } ?>
+							<?php echo $title; ?>
+						</td>
+						<td>$
+							<?php echo $price; ?>
+						</td>
+						<td colspan="1" style="width:50px"><input type="number" name="qty" class="input-responsive text-center" value="1" required></td>
+						<td>$10</td>
+						<td><button type="submit" name="delete-cart-item" class="btn btn-secondary">Delete</button></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button type="submit" name="update-cart" class="btn btn-primary">Update Cart</button></td>
+					</tr>
+				</tbody>
+			</table>
 
-        <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
+			<fieldset>
+				<legend>Delivery Details</legend>
+				<div class="order-label">Full Name</div>
+				<input type="text" name="full-name" placeholder="E.g. Vishwakranti Suryawanshi" class="input-responsive" required>
 
-        <form action="" method="POST" class="order">
-            <fieldset>
-                <legend>Selected Food</legend>
+				<div class="order-label">Phone Number</div>
+				<input type="tel" name="contact" placeholder="E.g. 2108212223" class="input-responsive" required>
 
-                <div class="food-menu-img">
-                    <?php
+				<div class="order-label">Email</div>
+				<input type="email" name="email" placeholder="E.g. vishwakrantisuryawanshi@gmail.com" class="input-responsive" required>
 
-                    //CHeck whether the image is available or not
-                    if ($image_name == "") {
-                        //Image not Availabe
-                        echo "<div class='error'>Image not Available.</div>";
-                    } else {
-                        //Image is Available
-                    ?>
-                        <img src="<?php echo SiteURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicken Biryani" class="img-responsive img-curve">
-                    <?php
-                    }
+				<div class="order-label">Address</div>
+				<textarea name="address" rows="10" placeholder="E.g. Twigger Street, Christchurch, New Zealand" class="input-responsive"
+				 required></textarea>
 
-                    ?>
+				<input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
+			</fieldset>
 
-                </div>
+		</form>
 
-                <div class="food-menu-desc">
-                    <h3><?php echo $title; ?></h3>
-                    <input type="hidden" name="food" value="<?php echo $title; ?>">
-
-                    <p class="food-price">$<?php echo $price; ?></p>
-                    <input type="hidden" name="price" value="<?php echo $price; ?>">
-
-                    <div class="order-label">Quantity</div>
-                    <input type="number" name="qty" class="input-responsive" value="1" required>
-
-                </div>
-
-            </fieldset>
-
-            <fieldset>
-                <legend>Delivery Details</legend>
-                <div class="order-label">Full Name</div>
-                <input type="text" name="full-name" placeholder="E.g. Vishwakranti Suryawanshi" class="input-responsive" required>
-
-                <div class="order-label">Phone Number</div>
-                <input type="tel" name="contact" placeholder="E.g. 2108212223" class="input-responsive" required>
-
-                <div class="order-label">Email</div>
-                <input type="email" name="email" placeholder="E.g. vishwakrantisuryawanshi@gmail.com" class="input-responsive" required>
-
-                <div class="order-label">Address</div>
-                <textarea name="address" rows="10" placeholder="E.g. Twigger Street, Christchurch, New Zealand" class="input-responsive" required></textarea>
-
-                <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
-            </fieldset>
-
-        </form>
-
-        <?php
+		<?php
 
         //CHeck whether submit button is clicked or not
         if (isset($_POST['submit'])) {
@@ -169,8 +169,8 @@ if (isset($_GET['food_id'])) {
 
         ?>
 
-    </div>
+	</div>
 </section>
 <!-- Food Search Section Ends Here -->
 
-<?php include('partials-front/footer.php'); ?>
+<?php include('partials-front/footer.php'); 

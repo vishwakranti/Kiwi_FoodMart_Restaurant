@@ -1,6 +1,7 @@
 <?php include('partials-front/menu.php'); ?>
 <?php
 
+
 if (isset($_POST["add-to-cart"])) {
 }
 ?>
@@ -10,6 +11,8 @@ $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
 ?>
+<div class="container">
+    <div class="row">
         <div class="col-md-4">
             <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?> ">
                 <div style="border: 1px solid #333; background-color: #f1f1f1; "></div>
@@ -22,9 +25,12 @@ if (mysqli_num_rows($result) > 0) {
             </form>
 
         </div>
+        </div>
+</div>
 <?php
     }
 }
 ?>
+
 
 <?php include('partials-front/footer.php'); ?>
