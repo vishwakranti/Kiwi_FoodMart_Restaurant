@@ -19,8 +19,6 @@ if (mysqli_num_rows($result) > 0) {
                 <input type="text" name="quantity" class="form-control" value="1" />
                 <input type="hidden" name="hidden-name" value="<?php echo $row['food']; ?>" />
                 <input type="hidden" name="hidden-price" value="<?php echo $row['price']; ?>" />
-
-
             </form>
 
         </div>

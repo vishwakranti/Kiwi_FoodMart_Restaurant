@@ -1,48 +1,65 @@
 <?php
-define("MY_SITE_DIR", __DIR__);
-define("LOCAL_PATH_ROOT", $_SERVER["DOCUMENT_ROOT"]);
-define("HTTP_PATH_ROOT", isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : "_UNKNOWN"));
-define("RELATIVE_PATH_ROOT", '');
-define("RELATIVE_PATH_BASE", str_replace(HTTP_PATH_ROOT, RELATIVE_PATH_ROOT, getcwd()));
-define("RELATIVE_PATH_APP", dirname(RELATIVE_PATH_BASE));
 
-// ---------------------------------------------------------------------------
-// DEFINE LOCAL PATHS
-// ---------------------------------------------------------------------------
-define("LOCAL_PATH_BASE", LOCAL_PATH_ROOT . RELATIVE_PATH_BASE);
-define("LOCAL_PATH_APP", LOCAL_PATH_ROOT . RELATIVE_PATH_APP);
-define("SERVER_DIR", str_replace("\\", "", str_replace(RELATIVE_PATH_BASE, "", getcwd())));
-//echo "|" . SERVER_DIR;
-define("APP_PATH", "http://" . HTTP_PATH_ROOT . "/" . SERVER_DIR);
-define("CONFIG_PATH", RELATIVE_PATH_APP . "\\" . "admin\\config\\");
-define("PARTIALS_PATH", RELATIVE_PATH_APP . "\\" . "admin\\partials\\");
-//echo "|" . RELATIVE_PATH_BASE . "|";
-//echo "|" . HTTP_PATH_ROOT . "|";
-
-//echo "|" . $_SERVER['PHP_SELF'] . "|";
-//echo "|" . MY_SITE_DIR . "|";
-include MY_SITE_DIR . '\..\config\constants.php';
-include MY_SITE_DIR . '\login-check.php';
+include '../constants.php';
+//include 'login-check.php';
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+	<meta charset="UTF-8">
+	<!-- Important to make website responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kiwi Foodmart</title>
 
-<!--Menu starts here-->
-<div class="menu" text-center>
-    <div class="wrapper">
-        <ul>
-            <li><a href="admin/index.php">Home</a></li>
-            <li><a href="admin/manage-admin.php">Admin</a></li>
-            <li><a href="admin/manage-category.php">Category</a></li>
-            <li><a href="admin/manage-food.php">Food</a></li>
-            <li><a href="admin/manage-order.php">Order</a></li>
-            <li><a href="register.php">Register</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="admin/login.php">Admin Login</a></li>
-            <li><a href="admin/logout.php">Logout</a></li>
+	<!-- Link our CSS file -->
+	<link rel="stylesheet" href="../admin/css_kiwi_foodmart/admin.css">
 
-        </ul>
-    </div>
+	<!--Bootstrap css-->
+	<!-- CSS only -->
+	<link rel="stylesheet" href="../bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
 
-</div>
-<!--Menu Ends here-->
+    <!--MD bootstrap css-->
+    <!--<link rel="stylesheet" href="MDB5-STANDARD-UI-KIT-Free-4.1.0/css/mdb.min.css">-->
+	
+	<!--front css-->
+	<link rel="stylesheet" href="../css/front.css">
+</head>
+
+<body>
+	<!-- Navbar Section Starts Here -->
+    <!--reference: https://www.codeply.com/p/P0KN7DNsEq how to place navbar in the center-->
+    <nav class="navbar navbar-expand-lg navbar-light m-5">
+        <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
+            <a class="navbar-brand" href="<?php echo SiteURL; ?>" alt="kiwi food mart logo"> 
+                <img src="../images/Logo.png" alt="Restaurant Logo" class="img-responsive">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+						<a class="nav-link" href="index.php">Home</a>
+					</li >
+					<li class="nav-item">
+						<a class="nav-link" href="manage-admin.php" >Admin</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="manage-category.php">Category</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="manage-food.php">Food</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="manage-order.php">Order</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="logout.php">Logout</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	<!-- Navbar Section Ends Here -->

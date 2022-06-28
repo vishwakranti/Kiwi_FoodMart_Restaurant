@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <base href="http://localhost:8080/kiwi_foodmart/">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kiwi foodmart</title>
-    <link rel="stylesheet" href="admin/css_kiwi_foodmart/admin.css">
-</head>
-
-<body>
     <?php include('partials/menu.php') ?>
-    <div class="main-content">
-        <div class="wrapper"></div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
         <h1>Manage Category</h1>
         <br>
         <br>
@@ -53,15 +41,18 @@
         <a href="<?php echo SiteURL; ?>admin/add-category.php" class="btn-primary">Add Category</a>
         <br>
         <br>
-        <table class="tbl-full">
+        <table class="table table-striped">
+        <thead>
             <tr>
-                <th>Serial Number</th>
-                <th>Title</th>
-                <th>Image</th>
-                <th>Featured</th>
-                <th>Active</th>
-                <th>Actions</th>
+                <th scope="col">Serial Number</th>
+                <th scope="col">Title</th>
+                <th scope="col">Image</th>
+                <th scope="col">Featured</th>
+                <th scope="col">Active</th>
+                <th scope="col">Actions</th>
             </tr>
+            </thead>
+            <tbody>
             <?php
             // Query to get all categories from database
             $sql = "SELECT * FROM category";
@@ -128,11 +119,9 @@
             }
 
             ?>
-
+            </tbody>
         </table>
 
     </div>
+    </div>
     <?php include('partials/footer.php') ?>
-</body>
-
-</html>

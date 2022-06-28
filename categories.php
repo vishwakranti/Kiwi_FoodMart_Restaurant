@@ -29,7 +29,7 @@
                 $active = $row['active'];
         ?>
 
-                <div class="card col-md-6 p-2 mx-auto" style="">
+                <div class="card col-md-6 p-4 mx-auto m-4" style="">
 					<a href="<?php echo SiteURL . "category.php?id=" . $id; ?>">
                         
                             <?php

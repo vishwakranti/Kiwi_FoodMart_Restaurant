@@ -1,6 +1,7 @@
 <?php
 //include constants file
-include('./config/constants.php');
+//include('./config/constants.php');
+require_once '../constants.php';
 //echo "Delete Page";
 //Check wheather the id and image_name  value is set or not
 if (isset($_GET['id']) && isset($_GET['image_name'])) {
